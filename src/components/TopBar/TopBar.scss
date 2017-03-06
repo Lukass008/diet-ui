@@ -1,0 +1,16 @@
+@import "../../styles/base";
+
+$module: 'TopBar';
+
+.#{$module} {
+  background-color: $dark-blue-main;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.50);
+  color: $white;
+  width: 100%;
+  height: 80px;
+  padding: 10px 30px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

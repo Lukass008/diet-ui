@@ -1,0 +1,7 @@
+@import "../../../styles/base";
+
+$module: 'Logo';
+
+.#{$module} {
+  font-size: 28px;
+}

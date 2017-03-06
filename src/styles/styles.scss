@@ -1,0 +1,33 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,600,400i');
+@import "base";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Styles */
+body {
+  background-color: $white;
+  color: $dark-blue-main;
+  font: 12px/1.6 'Lato', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  letter-spacing: 1px;
+}
+
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    color: $white;
+  }
+}
