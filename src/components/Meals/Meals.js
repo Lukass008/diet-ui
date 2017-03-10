@@ -1,6 +1,8 @@
 // LIBS
 import React, { PureComponent, PropTypes } from 'react'
 import bemClassname from 'bem-classname'
+import immutablePropTypes from 'react-immutable-proptypes'
+import { List } from 'immutable'
 // COMPONENTS
 import ContainerHeader from '../ContainerHeader/ContainerHeader'
 // STYLES
@@ -25,7 +27,12 @@ class Meals extends PureComponent {
   }
 }
 
-Meals.propTypes = {}
-Meals.defaultProps = {}
+Meals.propTypes = {
+  getMeals: PropTypes.func,
+  mealsList: immutablePropTypes.list
+}
+Meals.defaultProps = {
+  mealsList: List([])
+}
 
 export default Meals

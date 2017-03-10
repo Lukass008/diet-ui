@@ -1,5 +1,5 @@
 import { createAction, handleActions } from 'redux-actions'
-import { Map } from 'immutable'
+import { Map, fromJS } from 'immutable'
 
 export const getMealsBegin = createAction('DIET/AUTH/LOGIN')
 export const getMealsEnd = createAction('DIET/AUTH/LOGIN_BEGIN')
@@ -16,6 +16,6 @@ export default handleActions({
   [getMealsEnd().type]: (state, action) => {
     return state
       .set('loading', false)
-      .set('mealsList', action.payload)
+      .set('mealsList', fromJS(action.payload))
   }
 }, initialState)
