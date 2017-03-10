@@ -1,15 +1,17 @@
+// LIBS
 import URI from 'urijs'
+// CONFIG
+import { apiConfig } from '../../config/config'
 
-export default function (domain, directory, queryObj, queryString) {
-  let url = URI(domain)
-    .directory(directory)
+export default function (query, token) {
+  const { apiUrl, directory, dietApi } = apiConfig
+  let url = URI(apiUrl)
+    .directory(directory + dietApi)
+    .query({
+      token,
+      query
+    })
 
-  if (queryObj) {
-    url = url.query(queryObj)
-  }
-  url = url.toString()
-  typeof queryString === 'string' ? url += queryString : null
-
-  return url
+  return url.toString()
 }
 

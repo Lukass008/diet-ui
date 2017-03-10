@@ -13,7 +13,9 @@ export default handleActions({
   [getMealsBegin().type]: (state) => {
     return state.set('loading', true)
   },
-  [getMealsEnd().type]: (state) => {
-    return state.set('loading', false)
+  [getMealsEnd().type]: (state, action) => {
+    return state
+      .set('loading', false)
+      .set('mealsList', action.payload)
   }
 }, initialState)

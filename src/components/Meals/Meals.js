@@ -12,6 +12,10 @@ class Meals extends PureComponent {
     this.className = bemClassname.bind(null, 'Meals')
   }
 
+  componentWillMount() {
+    this.props.getMeals()
+  }
+
   render () {
     return (
       <div className={this.className()}>

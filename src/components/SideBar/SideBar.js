@@ -15,9 +15,6 @@ class SideBar extends PureComponent {
 
   createItemsList () {
     return sidebarMenu.map((menuItem, index) => {
-      menuItem.indexRoute
-        ? console.log('IndexRoute')
-        : console.log('Route')
       return menuItem.indexRoute
         ? (<IndexLink
           to={menuItem.linkTo}

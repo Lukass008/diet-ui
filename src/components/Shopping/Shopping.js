@@ -3,19 +3,17 @@ import React, { PureComponent, PropTypes } from 'react'
 import bemClassname from 'bem-classname'
 // COMPONENTS
 import ContainerHeader from '../ContainerHeader/ContainerHeader'
-// STYLES
-import './Shopping.scss'
 
 class Shopping extends PureComponent {
-  constructor() {
+  constructor () {
     super()
     this.className = bemClassname.bind(null, 'Shopping')
   }
 
-  render() {
+  render () {
     return (
       <div className={this.className()}>
-        <ContainerHeader title='Shopping' />
+        <ContainerHeader title="Shopping List"/>
       </div>
     )
   }
