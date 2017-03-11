@@ -1,6 +1,7 @@
 // LIBS
-import React, { PureComponent, PropTypes } from 'react'
-import immutablePropTypes from 'react-immutable-proptypes'
+import React, {PureComponent, PropTypes} from 'react'
+// COMPONENTS
+import {Link} from 'react-router'
 import bemClassname from 'bem-classname'
 // STYLES
 import './CardSwitcher.scss'
@@ -11,13 +12,26 @@ class CardSwitcher extends PureComponent {
     this.className = bemClassname.bind(null, 'CardSwitcher')
   }
 
-  renderCards (cards) {
+  renderCards () {
+    const cards = this.props.cards
+    return cards.map((card) => {
+      return this.createCardItem(card)
+    })
+  }
 
+  createCardItem (card) {
+    const {key, label, link} = card
+
+    return <Link to={link} key={key}>
+      <div className={this.className('card')}>
+        {label}
+      </div>
+    </Link>
   }
 
   render () {
-    const cards = this.props.cards.toJS()
-    const cardsList = this.renderCards(cards)
+    console.log('this.props', this.props)
+    const cardsList = this.renderCards()
     return (
       <div className={this.className()}>
         {cardsList}
@@ -27,7 +41,7 @@ class CardSwitcher extends PureComponent {
 }
 
 CardSwitcher.propTypes = {
-  cards: immutablePropTypes.list
+  cards: PropTypes.array
 }
 CardSwitcher.defaultProps = {}
 

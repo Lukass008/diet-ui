@@ -13,7 +13,7 @@ class Shopping extends PureComponent {
   render () {
     return (
       <div className={this.className()}>
-        <ContainerHeader title="Shopping List"/>
+        <ContainerHeader title='Shopping List' />
       </div>
     )
   }

@@ -5,6 +5,9 @@ import immutablePropTypes from 'react-immutable-proptypes'
 import { List } from 'immutable'
 // COMPONENTS
 import ContainerHeader from '../ContainerHeader/ContainerHeader'
+import CardSwitcher from './CardSwitcher/CardSwitcher'
+// CONSTANTS
+import { mealsCards } from '../../constants/meals.constants'
 // STYLES
 import './Meals.scss'
 
@@ -14,7 +17,7 @@ class Meals extends PureComponent {
     this.className = bemClassname.bind(null, 'Meals')
   }
 
-  componentWillMount() {
+  componentWillMount () {
     this.props.getMeals()
   }
 
@@ -22,6 +25,8 @@ class Meals extends PureComponent {
     return (
       <div className={this.className()}>
         <ContainerHeader title='Meals' />
+        <CardSwitcher cards={mealsCards} />
+        {this.props.children}
       </div>
     )
   }

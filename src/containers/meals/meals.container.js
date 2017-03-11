@@ -14,7 +14,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    getMeals() {
+    getMeals () {
       dispatch(getMealsAction())
     }
   }

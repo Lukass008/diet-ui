@@ -2,11 +2,10 @@
 import request from '../../utils/request'
 import buildQuery from '../../utils/buildQuery'
 
-const xhr = new XMLHttpRequest()
+let xhr = new XMLHttpRequest()
 
 export default function (token) {
   return new Promise((resolve, reject) => {
-
     const query = `
     {
       meals {

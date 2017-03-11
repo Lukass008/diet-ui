@@ -19,6 +19,5 @@ export function getMealsAction () {
       .catch((err) => {
         dispatch(getMealsEnd(err))
       })
-
   }
 }

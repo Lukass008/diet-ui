@@ -4,7 +4,6 @@ import TopBar from '../../components/TopBar/TopBar'
 // ACTIONS
 import { logoutAction } from '../../actions/auth/logout-user.action'
 
-
 function mapStateToProps (state) {
   return {}
 }

@@ -7,7 +7,7 @@ import './LoginPage.scss'
 import { user } from '../../../private/config'
 
 class LoginPage extends PureComponent {
-  constructor() {
+  constructor () {
     super()
     this.className = bemClassname.bind(null, 'LoginPage')
   }
@@ -16,7 +16,7 @@ class LoginPage extends PureComponent {
     this.props.loginUser(user)
   }
 
-  render() {
+  render () {
     return (
       <div className={this.className()}>
         <div onClick={this.loginUser.bind(this)}>LOGIN</div>
