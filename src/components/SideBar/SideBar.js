@@ -1,5 +1,5 @@
 // LIBS
-import React, { PureComponent, PropTypes } from 'react'
+import React, { PureComponent } from 'react'
 import { Link, IndexLink } from 'react-router'
 import bemClassname from 'bem-classname'
 // CONSTS

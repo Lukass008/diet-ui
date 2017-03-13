@@ -26,7 +26,7 @@ class Meals extends PureComponent {
       <div className={this.className()}>
         <ContainerHeader title='Meals' />
         <CardSwitcher cards={mealsCards} />
-        {this.props.children}
+        {React.cloneElement(this.props.children, { mealsList: this.props.mealsList })}
       </div>
     )
   }

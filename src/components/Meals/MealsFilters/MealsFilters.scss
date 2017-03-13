@@ -1,0 +1,13 @@
+@import "../../../styles/base";
+
+$module: 'MealsFilters';
+.#{$module} {
+  width: 100%;
+  display: flex;
+  padding-left: 40px;
+  margin-top: 30px;
+
+  &__nutrients {
+    margin-left: 30px;
+  }
+}

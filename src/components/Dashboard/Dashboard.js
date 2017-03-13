@@ -1,5 +1,5 @@
 // LIBS
-import React, { PureComponent, PropTypes } from 'react'
+import React, { PureComponent } from 'react'
 import bemClassname from 'bem-classname'
 // COMPONENTS
 import TopbarContainer from '../../containers/topbar/topbar.container'

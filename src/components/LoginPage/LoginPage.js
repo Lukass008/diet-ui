@@ -25,7 +25,9 @@ class LoginPage extends PureComponent {
   }
 }
 
-LoginPage.propTypes = {}
+LoginPage.propTypes = {
+  loginUser: PropTypes.func
+}
 LoginPage.defaultProps = {}
 
 export default LoginPage

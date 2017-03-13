@@ -22,6 +22,9 @@ export default function (token) {
         recipe {
           ingredients {
             id
+            name
+            unit
+            amount
           }
           spices {
             id

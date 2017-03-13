@@ -1,0 +1,7 @@
+@import "../../../../styles/base";
+
+$module: 'MealTitle';
+.#{$module} {
+  font-size: 20px;
+  line-height: 20px;
+}

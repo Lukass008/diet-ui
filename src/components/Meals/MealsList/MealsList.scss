@@ -2,5 +2,9 @@
 
 $module: 'MealsList';
 .#{$module} {
+  &__list {
+    margin-top: 30px;
 
+
+  }
 }
