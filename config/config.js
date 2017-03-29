@@ -1,5 +1,5 @@
 export const apiConfig = {
-  apiUrl: 'http://localhost:3000/',
+  apiUrl: 'http://diet-api-161615.appspot.com/',
   directory: 'api/',
   dietApi: 'diet'
 }
