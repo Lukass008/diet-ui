@@ -12,9 +12,11 @@ $module: 'SideBar';
     display: block;
     text-decoration: none;
     font-size: 14px;
+    border-left: 3px solid transparent;
     &:hover {
       background-color: $gray-lighter;
       cursor: pointer;
+      border-left: 3px solid $green-main-light;
       .item-title {
         color: $dark-blue-main;
       }
@@ -24,8 +26,10 @@ $module: 'SideBar';
     }
 
     &.active {
-      color: $text-blue;
+      color: $green-main-dark;
       background-color: $gray-lighter;
+      border-left: 3px solid $green-main-light;
+      font-weight: bold;
     }
 
   }

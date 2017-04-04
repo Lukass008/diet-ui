@@ -15,20 +15,22 @@ class Icon extends Component {
     const { attributes: {xmlns, viewBox, width, height}, content } = this.props.svgIcon
 
     return (
-      <div>
-        <svg xmlns={xmlns}
-          viewBox={viewBox}
-          width={width}
-          height={height}
-          dangerouslySetInnerHTML={{__html: content}}
+      <svg xmlns={xmlns}
+        viewBox={viewBox}
+        width={width}
+        height={height}
+        dangerouslySetInnerHTML={{__html: content}}
+        className={this.props.className}
+        onClick={() => { this.props.onClick && this.props.onClick() }}
          />
-      </div>
     )
   }
 }
 
 Icon.propTypes = {
-  svgIcon: PropTypes.object.isRequired
+  svgIcon: PropTypes.object.isRequired,
+  className: PropTypes.string,
+  onClick: PropTypes.func
 }
 Icon.defaultProps = {}
 
