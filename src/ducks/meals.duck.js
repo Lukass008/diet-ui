@@ -3,10 +3,10 @@ import { Map, fromJS } from 'immutable'
 
 export const getMealsBegin = createAction('DIET/MEALS/GET_MEALS/BEGIN')
 export const getMealsEnd = createAction('DIET/MEALS/GET_MEALS/END')
-export const changeCard = createAction('DIET/MEALS/CHANGE_CARD')
 
 const initialState = Map({
-  loading: false
+  loading: false,
+  creating: false
 })
 
 // REDUCER

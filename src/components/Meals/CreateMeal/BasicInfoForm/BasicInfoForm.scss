@@ -1,0 +1,31 @@
+@import "../../../../styles/base";
+
+$module: 'BasicInfoForm';
+.#{$module} {
+  display: flex;
+
+  &__label {
+    text-transform: uppercase;
+    margin-top: 25px;
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  input {
+    border: 1px solid $gray-light;
+  }
+
+  &__leftBlock {
+    width: 100%;
+    margin-right: 58px;
+  }
+
+  &__name {
+    height: 40px;
+    width: 100%;
+  }
+  &__description {
+    height: 135px;
+    width: 100%;
+  }
+}

@@ -10,9 +10,9 @@ import DietContainer from './containers/diet/diet.container'
 import PlaningContainer from './containers/planing/planing.container'
 import ShoppingContainer from './containers/shopping/shopping.container'
 import MealsContainer from './containers/meals/meals.container'
+import CreateMealContainer from './containers/meals/create-meal'
 // COMPONENTS
-import MealsList from './components/Meals/MealsList/MealsList'
-import CreateMeal from './components/Meals/CreateMeal/CreateMeal'
+import Meals from './components/Meals/Meals'
 
 // UTILS
 import { checkIfLogged, checkIfNotLogged } from './logic/auth/check-auth'
@@ -29,9 +29,9 @@ export default function (store) {
       <Route path='/login' component={LoginContainer} onEnter={checkIfNotLogged(store)} />
       <Route path='/' component={DashboardContainer} onEnter={checkIfLogged(store)}>
         <IndexRoute component={ProfileContainer} />
-        <Route path='meals' component={MealsContainer}>
-          <IndexRoute component={MealsList} />
-          <Route path='create' component={CreateMeal} />
+        <Route path='meals' component={Meals}>
+          <IndexRoute component={MealsContainer} />
+          <Route path='create' component={CreateMealContainer} />
         </Route>
         <Route path='diet' component={DietContainer} />
         <Route path='plan' component={PlaningContainer} />

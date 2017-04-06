@@ -1,0 +1,19 @@
+@import "../../../styles/base";
+
+$module: 'SubTitle';
+
+.#{$module} {
+  color: $dark-blue-main;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+  svg {
+    fill: $green-main-dark;
+  }
+
+  span {
+    margin-left: 14px;
+    line-height: 14px;
+  }
+}
