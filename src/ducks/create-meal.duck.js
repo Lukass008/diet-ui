@@ -1,15 +1,25 @@
+// LIBS
 import { createAction, handleActions } from 'redux-actions'
 import { Map, List, fromJS } from 'immutable'
+// CONSTANTS
+import { INITIAL_ERRORS } from '../constants/create-meal.constants'
 
 export const createMealBegin = createAction('DIET/MEALS/CREATE/BEGIN')
 export const createMealEnd = createAction('DIET/MEALS/CREATE/END')
-export const validateInput = createAction('DIET/MEALS/CREATE/VALIDATE/NAME')
+// basic form
+export const setBasicNameValue = createAction('DIET/MEALS/CREATE/BASIC_FORM/NAME/SET_VALUE')
+export const setBasicNameError = createAction('DIET/MEALS/CREATE/BASIC_FORM/NAME/SET_ERROR')
+export const removeBasicNameError = createAction('DIET/MEALS/CREATE/BASIC_FORM/NAME/REMOVE_ERROR')
+export const setBasicDescriptionValue = createAction('DIET/MEALS/CREATE/BASIC_FORM/DESCRIPTION/SET_VALUE')
+export const setBasicDescriptionError = createAction('DIET/MEALS/CREATE/BASIC_FORM/DESCRIPTION/SET_ERROR')
+export const removeBasicDescriptionError = createAction('DIET/MEALS/CREATE/BASIC_FORM/DESCRIPTION/REMOVE_ERROR')
+
 
 const initialState = Map({
   basicForm: Map({
     name: Map({
       valid: false,
-      errorMessage: 'Name Field is required'
+      errorMessage: INITIAL_ERRORS.BASIC_NAME,
     }),
     description: Map({
       valid: true
@@ -21,7 +31,7 @@ const initialState = Map({
   ingredientsForm: List([
     Map({
       valid: false,
-      errorMessage: 'At least one ingredient should be provided'
+      errorMessage: INITIAL_ERRORS.INGREDIENTS_FORM
     })
   ])
 })
@@ -35,8 +45,32 @@ export default handleActions({
     return state
       .set('creating', false)
   },
-  [validateInput().type]: (state, action) => {
+  [setBasicNameValue().type]: (state, action) => {
     return state
-      .set(action.payload.form, fromJS(action.payload.validation))
+      .setIn(['basicForm', 'name', 'value'], action.payload)
+  },
+  [setBasicNameError().type]: (state, action) => {
+    return state
+      .setIn(['basicForm', 'name', 'valid'], false)
+      .setIn(['basicForm', 'name', 'errorMessage'], action.payload)
+  },
+  [removeBasicNameError().type]: (state) => {
+    return state
+      .setIn(['basicForm', 'name', 'valid'], true)
+      .deleteIn(['basicForm', 'name', 'errorMessage'])
+  },
+  [setBasicDescriptionValue().type]: (state, action) => {
+    return state
+      .setIn(['basicForm', 'description', 'value'], action.payload)
+  },
+  [setBasicDescriptionError().type]: (state, action) => {
+    return state
+      .setIn(['basicForm', 'description', 'valid'], false)
+      .setIn(['basicForm', 'description', 'errorMessage'], action.payload)
+  },
+  [removeBasicDescriptionError().type]: (state) => {
+    return state
+      .setIn(['basicForm', 'description', 'valid'], true)
+      .deleteIn(['basicForm', 'description', 'errorMessage'])
   }
 }, initialState)

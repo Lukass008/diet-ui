@@ -1,8 +1,8 @@
 // LIBS
 import React, { PureComponent, PropTypes } from 'react'
 import bemClassname from 'bem-classname'
-// COMPONENTS
-import BasicInfoForm from './BasicInfoForm/BasicInfoForm'
+// CONTAINERS
+import BasicFormContainer from '../../../containers/meals/create-meal/basic-form.container'
 // STYLES
 import './CreateMeal.scss'
 
@@ -13,15 +13,18 @@ class CreateMeal extends PureComponent {
   }
 
   createMeal () {
-    this.refs.basicForm.getWrappedInstance().handleSubmit()
     this.props.createMeal()
   }
 
   render () {
     return (
       <div className={this.className()}>
-        <BasicInfoForm ref='basicForm' validateInput={this.props.validateInput} />
-        <button className={this.className('saveBtn')} onClick={this.createMeal.bind(this)}>
+        <BasicFormContainer />
+        <button
+          disabled={!this.props.isFormValid}
+          className={this.className('saveBtn')}
+          onClick={this.createMeal.bind(this)}
+        >
           Create
         </button>
       </div>
@@ -31,7 +34,7 @@ class CreateMeal extends PureComponent {
 
 CreateMeal.propTypes = {
   createMeal: PropTypes.func,
-  validateInput: PropTypes.func
+  isFormValid: PropTypes.bool
 }
 CreateMeal.defaultProps = {}
 

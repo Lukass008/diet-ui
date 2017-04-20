@@ -10,7 +10,7 @@ import DietContainer from './containers/diet/diet.container'
 import PlaningContainer from './containers/planing/planing.container'
 import ShoppingContainer from './containers/shopping/shopping.container'
 import MealsContainer from './containers/meals/meals.container'
-import CreateMealContainer from './containers/meals/create-meal'
+import CreateMealContainer from './containers/meals/create-meal/create-meal.container'
 // COMPONENTS
 import Meals from './components/Meals/Meals'
 

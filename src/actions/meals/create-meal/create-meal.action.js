@@ -1,19 +1,21 @@
 // DUCKS
-import { createMealBegin, createMealEnd } from '../../ducks/create-meal.duck'
+import { createMealBegin, createMealEnd } from '../../../ducks/create-meal.duck'
 // ACTIONS
-import { logoutAction } from '../../actions/auth/logout-user.action'
+import { logoutAction } from '../../auth/logout-user.action'
 // LOGIC
-import { createMeal } from '../../logic/meals/create-meal'
+import { createMeal } from '../../../logic/meals/create-meal'
 // SELECTORS
-import { getAccessToken } from '../../selectors/auth.selectors'
+import { getAccessToken } from '../../../selectors/auth.selectors'
+import { getFormValues } from '../../../selectors/create-meal.selectors'
 
 export function createMealAction () {
   return function (dispatch, getState) {
     const state = getState()
     const token = getAccessToken(state)
+    const mealData = getFormValues(state)
 
     dispatch(createMealBegin())
-    createMeal(token)
+    createMeal(token, mealData)
       .then((data) => {
         dispatch(createMealEnd(data))
       })
@@ -25,3 +27,5 @@ export function createMealAction () {
       })
   }
 }
+
+

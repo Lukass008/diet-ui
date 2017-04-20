@@ -18,5 +18,8 @@ $module: 'CreateMeal';
     border: none;
     box-shadow: $button-shadow;
     cursor: pointer;
+    &:disabled {
+      background-color: $gray;
+    }
   }
 }

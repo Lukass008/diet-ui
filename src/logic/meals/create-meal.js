@@ -6,7 +6,6 @@ let xhr = new XMLHttpRequest()
 
 export function createMeal (token, mealDetails) {
   return new Promise((resolve, reject) => {
-    console.log('mealDetails', mealDetails)
     const query = `
     mutation {
       createMeal(
