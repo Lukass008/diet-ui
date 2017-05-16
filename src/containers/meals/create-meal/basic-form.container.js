@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import BasicInfoForm from '../../../components/Meals/CreateMeal/BasicInfoForm/BasicInfoForm'
 import { reduxForm } from 'redux-form/immutable'
 
+// CONSTANTS
+import { INITIAL_ERRORS } from '../../../constants/create-meal.constants'
 function mapStateToProps (state) {
   return {
 
@@ -18,7 +20,7 @@ function mapDispatchToProps (dispatch) {
 function validate (values) {
   const errors = {}
   if (!values.get('mealName') || values.get('mealName').length < 3) {
-    errors.mealName = 'Name should contain at lest 3 letters'
+    errors.mealName = INITIAL_ERRORS.BASIC_NAME
   }
 
   return errors

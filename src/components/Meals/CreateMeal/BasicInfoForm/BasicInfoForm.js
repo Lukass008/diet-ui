@@ -1,5 +1,5 @@
 // LIBS
-import React, { PureComponent, PropTypes } from 'react'
+import React, { PureComponent } from 'react'
 import bemClassname from 'bem-classname'
 import { Field } from 'redux-form/immutable'
 // COMPONENTS
@@ -32,6 +32,7 @@ class BasicInfoForm extends PureComponent {
             <Field
               component='input'
               type='textarea'
+              name='mealDescription'
               className={this.className('description')}
             />
           </div>

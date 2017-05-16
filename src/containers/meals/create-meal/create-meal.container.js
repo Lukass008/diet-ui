@@ -4,11 +4,11 @@ import CreateMeal from '../../../components/Meals/CreateMeal/CreateMeal'
 // ACTIONS
 import { createMealAction } from '../../../actions/meals/create-meal/create-meal.action'
 // SELECTORS
-import { validateForm } from '../../../selectors/create-meal.selectors'
+import { isFormValidSelector } from '../../../selectors/create-meal.selectors'
 
 function mapStateToProps (state) {
   return {
-    isFormValid: validateForm(state)
+    isFormValid: isFormValidSelector(state)
   }
 }
 
