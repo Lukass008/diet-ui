@@ -1,0 +1,35 @@
+@import "../../../../../styles/base";
+$module: 'NutrientsTable';
+
+.#{$module} {
+  table {
+    border: 1px solid #8CC63F;
+    box-shadow: 0 0 6px 2px rgba(0,0,0,0.16);
+    margin-left: 40px;
+  }
+  th, td {
+    min-width: 50px;
+    &:first-child {
+      padding-left: 20px;
+    }
+    &:last-child {
+      padding-right: 20px;
+    }
+  }
+
+  th {
+    @extend %label;
+    padding: 20px 5px 6px 5px;
+  }
+  tbody {
+    tr {
+      height: 50px;
+      &:nth-child(odd) {
+        background-color: #F6F6F6;
+      }
+      td {
+        text-align: center;
+      }
+    }
+  }
+}

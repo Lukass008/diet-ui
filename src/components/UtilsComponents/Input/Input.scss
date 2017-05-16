@@ -15,7 +15,7 @@ $module: 'Input';
   }
   &--error {
     input {
-      border-color: orange;
+      border-color: red;
     }
   }
   &__errorMessage {

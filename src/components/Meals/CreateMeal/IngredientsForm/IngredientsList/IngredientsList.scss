@@ -1,0 +1,37 @@
+@import "../../../../../styles/base";
+$module: 'IngredientsList';
+
+.#{$module} {
+  display: flex;
+  &__addBtn {
+    display: block;
+    background-color: $dark-blue-main;
+    width: 150px;
+    height: 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: $white;
+    border: none;
+    box-shadow: $button-shadow;
+    cursor: pointer;
+  }
+  &__removeButtons {
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    margin-right: 5px;
+    margin-left: -25px;
+    margin-top: 43px;
+  }
+  &__removeBtn {
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    &:hover {
+      color: red;
+    }
+  }
+}

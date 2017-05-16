@@ -6,7 +6,7 @@ import bemClassname from 'bem-classname'
 import './Input.scss'
 
 class Input extends PureComponent {
-  constructor() {
+  constructor () {
     super()
     this.className = bemClassname.bind(null, 'Input')
   }
@@ -22,7 +22,7 @@ class Input extends PureComponent {
     )
   }
 
-  render() {
+  render () {
     const { type, input, properties, style, meta: { touched, error } } = this.props
     return (
       <div className={this.className({error: touched && error})}>

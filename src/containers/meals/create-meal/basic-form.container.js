@@ -1,10 +1,10 @@
 // LIBS
 import { connect } from 'react-redux'
-import BasicInfoForm from '../../../components/Meals/CreateMeal/BasicInfoForm/BasicInfoForm'
 import { reduxForm } from 'redux-form/immutable'
-
+// COMPONENTS
+import BasicInfoForm from '../../../components/Meals/CreateMeal/BasicInfoForm/BasicInfoForm'
 // CONSTANTS
-import { INITIAL_ERRORS } from '../../../constants/create-meal.constants'
+import { INITIAL_ERRORS, CREATE_MEAL_FORM } from '../../../constants/create-meal.constants'
 function mapStateToProps (state) {
   return {
 
@@ -27,7 +27,7 @@ function validate (values) {
 }
 
 export default reduxForm({
-  form: 'createMeal',
+  form: CREATE_MEAL_FORM,
   destroyOnUnmount: false,
   validate
 })(connect(

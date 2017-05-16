@@ -5,7 +5,7 @@ export const getFormValues = state => state.getIn(['form', 'createMeal', 'values
 
 export const isFormValidSelector = createSelector(
   getValidationErrors,
-  ( errors ) => {
+  (errors) => {
     return errors
       ? !Object.keys(errors).length
       : true

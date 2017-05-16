@@ -30,4 +30,3 @@ export default function (params) {
     request.send(JSON.stringify(data))
   })
 }
-

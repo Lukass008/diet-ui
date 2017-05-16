@@ -6,7 +6,7 @@ import bemClassname from 'bem-classname'
 import './Textarea.scss'
 
 class Textarea extends PureComponent {
-  constructor() {
+  constructor () {
     super()
     this.className = bemClassname.bind(null, 'Textarea')
   }
@@ -22,7 +22,7 @@ class Textarea extends PureComponent {
     )
   }
 
-  render() {
+  render () {
     const { input, properties, style, meta: { touched, error } } = this.props
 
     return (
