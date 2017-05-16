@@ -1,50 +1,34 @@
 // LIBS
 import { connect } from 'react-redux'
 import BasicInfoForm from '../../../components/Meals/CreateMeal/BasicInfoForm/BasicInfoForm'
-// ACTIONS
-import {
-  setBasicNameValue,
-  setBasicNameError,
-  removeBasicNameError,
-  setBasicDescriptionValue,
-  setBasicDescriptionError,
-  removeBasicDescriptionError
-} from '../../../ducks/create-meal.duck'
-// SELECTORS
-import { validateBasicForm, getBasicName, getBasicDescription } from '../../../selectors/create-meal.selectors'
+import { reduxForm } from 'redux-form/immutable'
 
 function mapStateToProps (state) {
   return {
-    isSubFormValid: validateBasicForm(state),
-    name: getBasicName(state),
-    description: getBasicDescription(state)
+
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    changeName (name) {
-      dispatch(setBasicNameValue(name))
-    },
-    setNameError (error) {
-      dispatch(setBasicNameError(error))
-    },
-    removeNameError () {
-      dispatch(removeBasicNameError())
-    },
-    changeDescription (name) {
-      dispatch(setBasicDescriptionValue(name))
-    },
-    setDescriptionError (error) {
-      dispatch(setBasicDescriptionError(error))
-    },
-    removeDescriptionError () {
-      dispatch(removeBasicDescriptionError())
-    }
+
   }
 }
 
-export default connect(
+function validate (values) {
+  const errors = {}
+  if (!values.get('mealName') || values.get('mealName').length < 3) {
+    errors.mealName = 'Name should contain at lest 3 letters'
+  }
+
+  return errors
+}
+
+export default reduxForm({
+  form: 'createMeal',
+  destroyOnUnmount: false,
+  validate
+})(connect(
   mapStateToProps,
   mapDispatchToProps
-)(BasicInfoForm)
+)(BasicInfoForm))

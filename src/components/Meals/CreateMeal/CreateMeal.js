@@ -3,6 +3,7 @@ import React, { PureComponent, PropTypes } from 'react'
 import bemClassname from 'bem-classname'
 // CONTAINERS
 import BasicFormContainer from '../../../containers/meals/create-meal/basic-form.container'
+import IngredientsFormContainer from '../../../containers/meals/create-meal/ingredients-form.container'
 // STYLES
 import './CreateMeal.scss'
 
@@ -20,6 +21,7 @@ class CreateMeal extends PureComponent {
     return (
       <div className={this.className()}>
         <BasicFormContainer />
+        <IngredientsFormContainer />
         <button
           disabled={!this.props.isFormValid}
           className={this.className('saveBtn')}

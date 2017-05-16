@@ -10,7 +10,7 @@ export const createMealEnd = createAction('DIET/MEALS/CREATE/END')
 export const setBasicNameValue = createAction('DIET/MEALS/CREATE/BASIC_FORM/NAME/SET_VALUE')
 export const setBasicNameError = createAction('DIET/MEALS/CREATE/BASIC_FORM/NAME/SET_ERROR')
 export const removeBasicNameError = createAction('DIET/MEALS/CREATE/BASIC_FORM/NAME/REMOVE_ERROR')
-export const setBasicDescriptionValue = createAction('DIET/MEALS/CREATE/BASIC_FORM/DESCRIPTION/SET_VALUE')
+export const setBasicDescriptionValue = createAction('DIET/MEALS/CREATE/BASIC_FORM/DESeCRIPTION/SET_VALUE')
 export const setBasicDescriptionError = createAction('DIET/MEALS/CREATE/BASIC_FORM/DESCRIPTION/SET_ERROR')
 export const removeBasicDescriptionError = createAction('DIET/MEALS/CREATE/BASIC_FORM/DESCRIPTION/REMOVE_ERROR')
 
@@ -30,6 +30,18 @@ const initialState = Map({
   }),
   ingredientsForm: List([
     Map({
+      ingredients: List([
+        Map({
+          id: 1,
+          name: '',
+          amount: '',
+          unit: '',
+          proteins: null,
+          carbohydrates: null,
+          fats: null,
+          kcal: null
+        })
+      ]),
       valid: false,
       errorMessage: INITIAL_ERRORS.INGREDIENTS_FORM
     })

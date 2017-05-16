@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import bemClassName from 'bem-classname'
 import './SubTitle.scss'
 
@@ -12,6 +12,10 @@ const SubTitle = ({ label }) => {
       <span>{label}</span>
     </div>
   )
+}
+
+SubTitle.PropTypes = {
+  label: PropTypes.string.isRequired
 }
 
 export default SubTitle
