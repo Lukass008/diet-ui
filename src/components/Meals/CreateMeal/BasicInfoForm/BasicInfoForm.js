@@ -5,6 +5,8 @@ import { Field } from 'redux-form/immutable'
 // COMPONENTS
 import SubTitle from '../../../UtilsComponents/SubTitle/SubTitle'
 import PhotoUpload from '../PhotoUpload/PhotoUpload'
+import Input from '../../../UtilsComponents/Input/Input'
+import Textarea from '../../../UtilsComponents/Textarea/Textarea'
 // STYLES
 import './BasicInfoForm.scss'
 
@@ -22,18 +24,14 @@ class BasicInfoForm extends PureComponent {
           <div className={this.className('leftBlock')}>
             <div className={this.className('label')}>Name</div>
             <Field
-              component='input'
-              type='text'
+              component={Input}
               name='mealName'
-              className={this.className('name')}
-              minLength={5}
             />
             <div className={this.className('label')}>Description</div>
             <Field
-              component='input'
-              type='textarea'
+              component={Textarea}
               name='mealDescription'
-              className={this.className('description')}
+              style={{height: 135}}
             />
           </div>
           <div className={this.className('photo')}>
