@@ -15,6 +15,10 @@ class MealsList extends PureComponent {
     this.className = bemClassname.bind(null, 'MealsList')
   }
 
+  componentWillMount () {
+    this.props.getMeals()
+  }
+
   renderMeals () {
     return this.props.mealsList.map((meal, index) => {
       return <SingleMeal key={index + meal.get('name')} mealData={meal} />

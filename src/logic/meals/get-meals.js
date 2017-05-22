@@ -4,7 +4,7 @@ import buildQuery from '../../utils/buildQuery'
 
 let xhr = new XMLHttpRequest()
 
-export default function (token) {
+export function getMeals (token) {
   return new Promise((resolve, reject) => {
     const query = `
     {

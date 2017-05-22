@@ -1,6 +1,7 @@
 import { getUserBasicInfo } from '../../logic/user/get-user-basic-info'
 import { getUserBasicInfoBegin, getUserBasicInfoEnd } from '../../ducks/user.duck'
 import { getAccessToken } from '../../selectors/auth.selectors'
+import { logoutAction } from '../auth/logout-user.action'
 
 export function getUserBasicInfoAction () {
   return function (dispatch, getState) {
@@ -13,7 +14,10 @@ export function getUserBasicInfoAction () {
         dispatch(getUserBasicInfoEnd(res.data.getUserInfo))
       })
       .catch((error) => {
-        throw error
+        if (error.status === 403) {
+          dispatch(logoutAction())
+        }
+        dispatch(getUserBasicInfoEnd(error))
       })
   }
 }

@@ -14,4 +14,3 @@ export default function (query, token) {
 
   return url.toString()
 }
-

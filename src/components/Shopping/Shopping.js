@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react'
 import bemClassname from 'bem-classname'
 // COMPONENTS
-import ContainerHeader from '../ContainerHeader/ContainerHeader'
+import ContainerHeader from '../UtilsComponents/ContainerHeader/ContainerHeader'
 
 class Shopping extends PureComponent {
   constructor () {

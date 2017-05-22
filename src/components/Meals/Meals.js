@@ -4,8 +4,8 @@ import bemClassname from 'bem-classname'
 import immutablePropTypes from 'react-immutable-proptypes'
 import { List } from 'immutable'
 // COMPONENTS
-import ContainerHeader from '../ContainerHeader/ContainerHeader'
-import CardSwitcher from './CardSwitcher/CardSwitcher'
+import ContainerHeader from '../UtilsComponents/ContainerHeader/ContainerHeader'
+import CardSwitcher from '../UtilsComponents/CardSwitcher/CardSwitcher'
 // CONSTANTS
 import { mealsCards } from '../../constants/meals.constants'
 // STYLES
@@ -17,16 +17,12 @@ class Meals extends PureComponent {
     this.className = bemClassname.bind(null, 'Meals')
   }
 
-  componentWillMount () {
-    this.props.getMeals()
-  }
-
   render () {
     return (
       <div className={this.className()}>
         <ContainerHeader title='Meals' />
         <CardSwitcher cards={mealsCards} />
-        {React.cloneElement(this.props.children, { mealsList: this.props.mealsList })}
+        {this.props.children}
       </div>
     )
   }
