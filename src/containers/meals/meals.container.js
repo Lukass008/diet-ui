@@ -1,6 +1,6 @@
 // LIBS
 import { connect } from 'react-redux'
-import Meals from '../../components/Meals/Meals'
+import MealsList from '../../components/Meals/MealsList/MealsList'
 // ACTIONS
 import { getMealsAction } from '../../actions/meals/get-meals.action'
 // SELECTORS
@@ -14,7 +14,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    getMeals() {
+    getMeals () {
       dispatch(getMealsAction())
     }
   }
@@ -23,4 +23,4 @@ function mapDispatchToProps (dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Meals)
+)(MealsList)

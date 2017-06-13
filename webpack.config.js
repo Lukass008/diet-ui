@@ -33,7 +33,13 @@ module.exports = {
           presets: ['es2015', 'react']
         }
       },
-      { test: /(\.css|\.scss)$/, loaders: [ 'style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap' ] }
+      { test: /(\.css|\.scss)$/, loaders: [ 'style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap' ] },
+      // { test: /\.svg$/, loaders: [
+      //   { loader: 'babel-loader', query: { presets: ['es2015', 'react'] }},
+      //   { loader: 'react-svg', query: { jsx: true } }
+      // ]},
+      { test: /\.svg$/, loader: 'svg-loader' },
+      { test: /\.(jpe?g|png|gif)$/i, loader: 'file-loader?name=[name].[ext]' }
       // { test: /\.scss$/, loaders: ['style', 'css', 'sass'] }
     ]
   },

@@ -1,8 +1,8 @@
 // LIBS
-import React, { PureComponent, PropTypes } from 'react'
+import React, { PureComponent } from 'react'
 import bemClassname from 'bem-classname'
 // COMPONENTS
-import ContainerHeader from '../ContainerHeader/ContainerHeader'
+import ContainerHeader from '../UtilsComponents/ContainerHeader/ContainerHeader'
 
 class Shopping extends PureComponent {
   constructor () {
@@ -13,7 +13,7 @@ class Shopping extends PureComponent {
   render () {
     return (
       <div className={this.className()}>
-        <ContainerHeader title="Shopping List"/>
+        <ContainerHeader title='Shopping List' />
       </div>
     )
   }

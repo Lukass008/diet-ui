@@ -1,11 +1,12 @@
 import { createAction, handleActions } from 'redux-actions'
 import { Map, fromJS } from 'immutable'
 
-export const getMealsBegin = createAction('DIET/AUTH/LOGIN')
-export const getMealsEnd = createAction('DIET/AUTH/LOGIN_BEGIN')
+export const getMealsBegin = createAction('DIET/MEALS/GET_MEALS/BEGIN')
+export const getMealsEnd = createAction('DIET/MEALS/GET_MEALS/END')
 
 const initialState = Map({
-  loading: false
+  loading: false,
+  creating: false
 })
 
 // REDUCER

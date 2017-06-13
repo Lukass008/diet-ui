@@ -13,3 +13,21 @@ $gray-lighter: #FAFAFA;
 $gray-lightest: #F9F9F9;
 $white: #fff;
 
+$green-main-light: #8CC63F;
+$green-main-dark: #006837;
+
+
+
+$default-border: 1px solid #{$gray-light};
+
+$button-shadow: 1px 1px 1px 0 rgba(0,0,0,0.50);
+
+//z-index
+$level1: 1;
+$level2: 2;
+$level3: 3;
+$level4: 5;
+$level5: 10;
+$level6: 100;
+$level7: 1000;
+$level8: 1000000;

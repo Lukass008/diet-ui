@@ -23,9 +23,7 @@ export function logInUser (user) {
     }
 
     request(params)
-      .then((data) => {
-        resolve(data)
-      })
+      .then(resolve)
       .catch(reject)
   })
 }

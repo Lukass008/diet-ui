@@ -1,0 +1,26 @@
+@import "../../../styles/base";
+
+$module: 'CreateMeal';
+.#{$module} {
+
+  padding: 35px 44px;
+
+  &__saveBtn {
+    display: block;
+    margin: 0 auto;
+    background-color: $dark-blue-main;
+    width: 120px;
+    height: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: $white;
+    border: none;
+    box-shadow: $button-shadow;
+    cursor: pointer;
+    &:disabled {
+      background-color: $gray;
+      cursor: not-allowed;
+    }
+  }
+}

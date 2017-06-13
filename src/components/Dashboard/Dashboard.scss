@@ -19,12 +19,11 @@ $module: 'Dashboard';
     height: 100%;
     width: 250px;
     border-right: 1px solid $gray;
-    //background-color: yellow;
   }
 
   &__contentWrapper {
-    //background-color: blue;
     width: calc(100% - 250px);
+    overflow: auto;
   }
 
 }

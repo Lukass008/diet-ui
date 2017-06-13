@@ -1,0 +1,49 @@
+@import "../../../styles/base";
+
+$module: 'CardSwitcher';
+.#{$module} {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 40px;
+  margin-top: 20px;
+  position: relative;
+
+  .active {
+    .CardSwitcher__card {
+      background-color: $white;
+      height: 44px;
+    }
+  }
+
+  &__card {
+
+    height: 36px;
+    width: 200px;
+    border: 1px solid $gray-light;
+    border-bottom: none;
+    background-color: $gray-light;
+    margin-right: 12px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: pointer;
+    color: $dark-blue-main;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__bottomLine {
+    width: 100%;
+    height: 1px;
+    margin-left: -40px;
+    background-color: $gray-light;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+  }
+}
