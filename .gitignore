@@ -1,4 +1,5 @@
 .idea
 node_modules
 private
-npm-debug.log
+npm-debug.log*
+package-lock.json
