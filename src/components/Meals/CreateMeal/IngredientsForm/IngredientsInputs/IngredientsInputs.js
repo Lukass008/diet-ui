@@ -4,6 +4,7 @@ import bemClassname from 'bem-classname'
 import { Field } from 'redux-form/immutable'
 // COMPONENTS
 import Input from '../../../../UtilsComponents/Input/Input'
+import SearchableIngredient from '../SearchableIngredient/SearchableIngredient'
 // STYLES
 import './IngredientsInputs.scss'
 
@@ -16,15 +17,15 @@ class IngredientsInputs extends PureComponent {
   renderIngredientsInputs () {
     const { fields } = this.props
     return fields.map((field) => {
-      return this.renderSingleIngredients(field)
+      return this.renderSingleIngredient(field)
     })
   }
 
-  renderSingleIngredients (field) {
+  renderSingleIngredient (field) {
     return (
       <div className={this.className('singleIngredient')} key={field}>
         <div className={this.className('name')}>
-          <Field name={`${field}.name`} component={Input} />
+          <SearchableIngredient name={`${field}.name`} />
         </div>
         <div className={this.className('amount')}>
           <Field name={`${field}.amount`} component={Input} />

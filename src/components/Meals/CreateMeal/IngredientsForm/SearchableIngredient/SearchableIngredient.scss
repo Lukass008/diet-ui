@@ -1,0 +1,26 @@
+@import "../../../../../styles/base";
+$module: 'SearchableIngredient';
+
+.#{$module} {
+  position: relative;
+  &__inputWrapper {
+    z-index: $level3;
+  }
+  &__openedList {
+    position: absolute;
+    max-height: 200px;
+    width: 100%;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+    box-shadow: $item-shadow;
+    z-index: $level2;
+  }
+  &__listItem {
+    padding: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    &:hover {
+      background-color: #f0f0fa;
+    }
+  }
+}
