@@ -1,5 +1,5 @@
 // LIBS
-import React, { PureComponent } from 'react'
+import React, { PureComponent, PropTypes } from 'react'
 import bemClassname from 'bem-classname'
 // COMPONENTS
 import { Field } from 'redux-form/immutable'
