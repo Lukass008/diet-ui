@@ -1,6 +1,6 @@
 // LIBS
 import { createAction, handleActions } from 'redux-actions'
-import { Map, List, fromJS } from 'immutable'
+import { Map } from 'immutable'
 
 export const createMealBegin = createAction('DIET/MEALS/CREATE/BEGIN')
 export const createMealEnd = createAction('DIET/MEALS/CREATE/END')

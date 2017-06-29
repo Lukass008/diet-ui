@@ -1,12 +1,15 @@
 // LIBS
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import bemClassname from 'bem-classname'
+// COMPONENTS
+import { Field } from 'redux-form/immutable'
+import Input from '../../../../UtilsComponents/Input/Input'
 // STYLES
 import './NutrientsTable.scss'
 
-class NutrientsTable extends PureComponent {
-  constructor() {
+class NutrientsTable extends Component {
+  constructor () {
     super()
     this.className = bemClassname.bind(null, 'NutrientsTable')
   }
@@ -22,7 +25,7 @@ class NutrientsTable extends PureComponent {
           </tr>
         </thead>
         <tbody>
-        {this.renderRows()}
+          {this.renderRows()}
         </tbody>
       </table>
     )
@@ -38,15 +41,15 @@ class NutrientsTable extends PureComponent {
   renderSingleRow (field) {
     return (
       <tr key={field}>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
+        <td><Field name={`${field}.proteins`} component={Input} /></td>
+        <td><Field name={`${field}.carbo`} component={Input} /></td>
+        <td><Field name={`${field}.fats`} component={Input} /></td>
+        <td><Field name={`${field}.kcal`} component={Input} /></td>
       </tr>
     )
   }
 
-  render() {
+  render () {
     return (
       <div className={this.className()}>
         {this.renderNutrientsTable()}
@@ -55,7 +58,10 @@ class NutrientsTable extends PureComponent {
   }
 }
 
-NutrientsTable.propTypes = {}
+NutrientsTable.propTypes = {
+  fields: PropTypes.object,
+  fromDB: PropTypes.object
+}
 NutrientsTable.defaultProps = {}
 
 export default NutrientsTable

@@ -30,6 +30,7 @@ class Input extends PureComponent {
           {...input}
           type={type}
           style={style}
+          disabled={this.props.disabled}
           {...properties}
         />
         {this.renderErrorAndWarning()}

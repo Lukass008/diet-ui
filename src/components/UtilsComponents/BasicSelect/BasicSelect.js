@@ -1,5 +1,6 @@
 // LIBS
-import React, { PureComponent, PropTypes } from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import bemClassname from 'bem-classname'
 import immutablePropTypes from 'react-immutable-proptypes'
 import { List } from 'immutable'

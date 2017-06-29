@@ -19,16 +19,19 @@ class IngredientsForm extends PureComponent {
     return (
       <div className={this.className()}>
         <SubTitle label='Type list of ingredients' />
-            <FieldArray
-              component={IngredientsList}
-              name='ingredients'
+        <FieldArray
+          component={IngredientsList}
+          name='ingredients'
+          changeValue={this.props.changeValue}
             />
       </div>
     )
   }
 }
 
-IngredientsForm.propTypes = {}
+IngredientsForm.propTypes = {
+  changeValue: PropTypes.func
+}
 IngredientsForm.defaultProps = {}
 
 export default IngredientsForm

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { reduxForm } from 'redux-form/immutable'
+import { reduxForm, change } from 'redux-form/immutable'
 // COMPONENTS
 import IngredientsForm from '../../../components/Meals/CreateMeal/IngredientsForm/IngredientsForm'
 // CONSTANTS
@@ -10,7 +10,11 @@ function mapStateToProps (state) {
 }
 
 function mapDispatchToProps (dispatch) {
-  return {}
+  return {
+    changeValue (field, value) {
+      dispatch(change(CREATE_MEAL_FORM, field, value))
+    }
+  }
 }
 function validate (values) {
   const errors = {}

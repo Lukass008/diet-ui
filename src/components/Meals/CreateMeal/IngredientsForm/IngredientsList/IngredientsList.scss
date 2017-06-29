@@ -34,4 +34,26 @@ $module: 'IngredientsList';
       color: red;
     }
   }
+  &__ingredients {
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+  }
+  &__ingredientsLabels {
+    display: flex;
+  }
+  &__label {
+    @extend %label;
+  }
+  &__name {
+    width: 60%;
+    margin-right: 30px;
+  }
+  &__amount {
+    width: 20%;
+    margin-right: 30px;
+  }
+  &__unit {
+    width: 20%;
+  }
 }
